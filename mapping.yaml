@@ -1,0 +1,11 @@
+orientation: normal
+rows: 1
+columns: 3
+knobs: 1
+layers:
+  - buttons:
+      - ["q", "s", "d"]
+    knobs:
+      - ccw: "w"
+        press: "x"
+        cw: "c"
