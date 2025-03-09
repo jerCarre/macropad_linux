@@ -2,11 +2,13 @@
 
 This page describe how to use a chinese macropad (3 keys + 1 knob) in Ubuntu (24.10).
 
-1. Buy a macropad on aliexpress : https://a.aliexpress.com/_Ex9z7H6 
+1. Buy a macropad [on aliexpress](https://s.click.aliexpress.com/e/_EyCfpXA) like this one 
+
+![](macropad.jpg)
 
 2. Clone this repo
 
-3. Edit mapping.yaml file to set your key own shortcuts
+3. Edit mapping.yaml file to set your own key shortcuts
 
 ```yaml
 orientation: normal
@@ -14,12 +16,14 @@ rows: 1
 columns: 3
 knobs: 1
 layers:
-  - buttons:
-    - ["q", "ctrl-shift-q", "alt-shift-q"]
-    knobs:
-    - ccw: "alt-ctrl-shift-r"
-      press: "alt-ctrl-shift-t"
-      cw: "alt-ctrl-shift-y"
+- buttons:
+  # first, second and third button
+  - ["q", "ctrl-shift-q", "alt-shift-q"]
+  knobs:
+  # counter clock wise, press and clock wise knob
+  - ccw: "alt-ctrl-shift-r"
+    press: "alt-ctrl-shift-t"
+    cw: "alt-ctrl-shift-y"
 ```
 
 4. Validate your configuration
