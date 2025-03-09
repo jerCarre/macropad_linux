@@ -1,12 +1,26 @@
-# chinese macropad in linux (ubuntu)
+# Chinese macropad in linux (ubuntu)
 
 This page describe how to use a chinese macropad (3 keys + 1 knob) in Ubuntu (24.10).
 
-1. Buy a macropad on aliexpress : 
+1. Buy a macropad on aliexpress : https://a.aliexpress.com/_Ex9z7H6 
 
 2. Clone this repo
 
-3. Edit mapping.yaml file to set your key own shortcuts 
+3. Edit mapping.yaml file to set your key own shortcuts
+
+```yaml
+orientation: normal
+rows: 1
+columns: 3
+knobs: 1
+layers:
+  - buttons:
+    - ["q", "ctrl-shift-q", "alt-shift-q"]
+    knobs:
+    - ccw: "alt-ctrl-shift-r"
+      press: "alt-ctrl-shift-t"
+      cw: "alt-ctrl-shift-y"
+```
 
 4. Validate your configuration
 
@@ -14,7 +28,14 @@ This page describe how to use a chinese macropad (3 keys + 1 knob) in Ubuntu (24
 tools/ch57x-keyboard-tool validate < mapping.yaml
 ```
 
-5. Connect your macropad
+5. Connect your macropad and check it :
+
+```shell
+lsusb
+   ...
+   Bus ... Device ...: ID 1189:8890 Acer Communications & Multimedia 
+   ...
+```
 
 6. Apply configuration to your macropad
 
