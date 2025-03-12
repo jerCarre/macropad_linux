@@ -1,4 +1,4 @@
-# Chinese macropad in linux (ubuntu)
+# Chinese macropad configuration in linux (ubuntu)
 
 This page describe how to configure a chinese macropad (3 keys + 1 knob) in Ubuntu (24.10).
 
