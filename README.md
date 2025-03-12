@@ -1,6 +1,6 @@
 # Chinese macropad in linux (ubuntu)
 
-This page describe how to use a chinese macropad (3 keys + 1 knob) in Ubuntu (24.10).
+This page describe how to configure a chinese macropad (3 keys + 1 knob) in Ubuntu (24.10).
 
 1. Buy a macropad [on aliexpress](https://s.click.aliexpress.com/e/_EyCfpXA) like this one 
 
@@ -8,7 +8,17 @@ This page describe how to use a chinese macropad (3 keys + 1 knob) in Ubuntu (24
 
 2. Clone this repo
 
-3. Edit mapping.yaml file to set your own key shortcuts
+3. Enable macropad access
+
+```shell
+sudo cp rules/50-1189.rules /etc/udev/rules.d/
+
+sudo udevadm control --reload-rules
+
+sudo usermod -a -G plugdev $USER
+```
+
+4. Edit mapping.yaml file to set your own key shortcuts
 
 ```yaml
 orientation: normal
@@ -26,13 +36,13 @@ layers:
     cw: "alt-ctrl-shift-y"
 ```
 
-4. Validate your configuration
+5. Validate your configuration
 
 ```shell
 tools/ch57x-keyboard-tool validate < mapping.yaml
 ```
 
-5. Connect your macropad and check it :
+6. Connect your macropad and check it :
 
 ```shell
 lsusb
@@ -41,7 +51,7 @@ lsusb
    ...
 ```
 
-6. Apply configuration to your macropad
+7. Apply configuration to your macropad
 
 ```shell
 tools/ch57x-keyboard-tool upload < mapping.yaml
